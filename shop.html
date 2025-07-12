@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop – Cindy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">CINDY</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Shop Section -->
+  <section class="products">
+    <div class="product">
+      <img src="classy-charm.jpg" alt="Product A" />
+      <p>Classy Charm<br><strong>150$</strong></p>
+      <button onclick="addToCart('Classy Charm', 99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="lovely-lines.jpg" alt="Product B" />
+      <p>Lovely Lines<br><strong>250$</strong></p>
+      <button onclick="addToCart('Lovely Lines', 110)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="golden-hour.jpg" alt="Product C" />
+      <p>Golden Hour<br><strong>100$</strong></p>
+      <button onclick="addToCart('Golden Hour', 89)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="soft and chic.jpg" alt="Product D" />
+      <p>Soft & Chic<br><strong>300$</strong></p>
+      <button onclick="addToCart('Soft & Chic', 95)">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>©️ 2025 Cindy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function addToCart(name, price) {
+      // خواندن سبد خرید فعلی از localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // بررسی وجود محصول در سبد خرید
+      let found = cart.find(item => item.name === name);
+      if (found) {
+        found.quantity += 1; // اگر هست، تعداد را زیاد کن
+      } else {
+        cart.push({name: name, price: price, quantity: 1});
+      }
+      
+      // ذخیره دوباره در localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      alert(name + ' added to cart!');
+    }
+  </script>
+
+</body>
+</html>

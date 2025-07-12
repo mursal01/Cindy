@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart - Cindy Collection</title>
+  <link rel="stylesheet" href="style.css" /><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">CINDY</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="active">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <h1>Your Shopping Cart</h1>
+    <table class="cart-table" id="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price (€)</th>
+          <th>Quantity</th>
+          <th>Total (€)</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- محصولات سبد خرید اینجا توسط JS اضافه می‌شوند -->
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <p><strong>Total: €<span id="cart-total">0</span></strong></p>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>©️ 2025 Cindy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const tbody = document.getElementById('cart-items');
+      tbody.innerHTML = '';
+
+      let totalPrice = 0;
+
+      if (cart.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Your cart is empty.</td></tr>';
+        document.getElementById('cart-total').textContent = '0';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        totalPrice += itemTotal;
+
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.price.toFixed(2)}</td>
+          <td>${item.quantity}</td>
+          <td>${itemTotal.toFixed(2)}</td>
+          <td><button class="remove-btn" onclick="removeItem(${index})">X</button></td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('cart-total').textContent = totalPrice.toFixed(2);
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function checkout() {
+      alert('Checkout functionality is not implemented yet.');
+    }
+
+    // Load cart on page load
+    window.onload = loadCart;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel Decorative', cursive;
+  background-color: #f5f0ed;
+  color: #3d2b24;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 28px;
+  color: #3d2b24;
+}
+
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #3d2b24;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #a8674e;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fefefe;
+}
+
+.hero-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.side-img,
+.main-img {
+  border-radius: 12px;
+  width: 200px;
+  height: auto;
+}
+
+.hero-text {
+  margin-top: 40px;
+  padding: 25px 40px;
+  border: 2px solid #c69a84;
+  border-radius: 12px;
+  background-color: #fff ;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hero-text h1 {
+  margin-top: 30px;
+  font-size: 40px;
+  font-family: 'Cinzel Decorative', cursive;
+  color: #3d2b24;
+  
+  
+}
+
+/* Welcome Section */
+.welcome {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #c69a84;
+  color: #fff;
+  padding: 60px 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.welcome img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.welcome-text {
+  max-width: 400px;
+}
+
+.welcome-text h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #3d2b24;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #fbe4d8;
+}
+
+/* Product Section */
+.products {
+  padding: 50px 30px;
+  background-color: #eeeae8;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.products img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.products p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Sale Section */
+.sale {
+  background-color: #c69a84;
+  text-align: center;
+  color: #fff;
+  padding: 60px 30px;
+}
+
+.sale h2 {
+  font-size: 36px;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+/* Adventure Section */
+.adventure {
+  text-align: center;
+  padding: 60px 30px;
+  background-color: #f5f0ed;
+}
+
+.adventure h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.adventure p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.adventure .grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.adventure .grid img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #f0eae7;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6a4e3a;
+}
+
+/* Cart Section */
+.cart-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.cart-section h1 {
+  font-family: 'Cinzel Decorative' , sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3d2b24;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.cart-table th, .cart-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-family: 'Cinzel Decorative', sans-serif;
+  color: #3d2b24;
+}
+
+.cart-table th {
+  background-color: #eeeae8;
+  font-weight: 600;
+}
+
+.remove-btn {
+  background-color: #a8674e;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #854FBC;
+}
+
+.cart-summary {
+  text-align: right;
+  font-family: 'Cinzel Decorative', sans-serif;
+  font-size: 1.2rem;
+  color: #3d2b24;
+}
+
+.checkout-btn {
+  background-color: #522558;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #854FBC;
+
+}
+
+/* faq Section */
+.faq {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background-color: #eeeae8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  color: #3d2b24;
+}
+
+.faq h2 {
+  text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #3d2b24;
+  padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 18px;
+  color: #522558;
+  cursor: pointer;
+  position: relative;
+  padding-right: 25px;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+  content: '-';
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  color: #3d2b24;
+  transition: max-height 0.3s ease;
+  margin-top: 8px;
+}
+
+.faq-answer.active {
+  max-height: 500px; /* اندازه کافی برای نمایش جواب */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column; /* منو عمودی شود */
+    align-items: center;
+  }
+  .navbar a {
+    padding: 12px 20px; /* فضای بزرگ‌تر برای لمس راحت */
+    font-size: 18px; /* فونت بزرگ‌تر */
+    width: 100%; /* دکمه‌ها عرض کامل بگیرند */
+    text-align: center;
+  }
+}
